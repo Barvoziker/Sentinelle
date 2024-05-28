@@ -6,9 +6,6 @@ class PingCommand extends Command {
     super(client, {
       name: "ping",
       description: "🏓 Show the bot latency",
-      descriptionLocalizations: {
-        fr: "🏓 Affiche la latence du bot",
-      },
       category: "Misc",
       clientPermissions: ["EmbedLinks"],
     });

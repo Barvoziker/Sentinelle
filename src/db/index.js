@@ -1,7 +1,7 @@
-const GuildData = require("./guild");
-const UserData = require("./user");
+const BanData = require("./banSchema");
+const MuteData = require("./muteSchema");
 
 module.exports = {
-  GuildData,
-  UserData,
+  BanData,
+  MuteData,
 };

@@ -12,6 +12,8 @@ const client = new ShewenyClient({
     IntentsBitField.Flags.Guilds,
     IntentsBitField.Flags.GuildMessages,
     IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.DirectMessages,
+    IntentsBitField.Flags.MessageContent,
   ],
   partials: [Partials.GuildMember, Partials.Message, Partials.User],
   managers: {
