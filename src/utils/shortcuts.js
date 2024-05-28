@@ -81,6 +81,25 @@ function FormatToDcDate(date, format) {
   return DateString;
 }
 
+function fetchData(id, Schema) {
+  return Schema.findOne({id});
+}
+
+function formatDuration(ms) {
+  const seconds = Math.floor((ms / 1000) % 60);
+  const minutes = Math.floor((ms / (1000 * 60)) % 60);
+  const hours = Math.floor((ms / (1000 * 60 * 60)) % 24);
+  const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+
+  const parts = [];
+  if (days) parts.push(`${days} jour${days > 1 ? 's' : ''}`);
+  if (hours) parts.push(`${hours} heure${hours > 1 ? 's' : ''}`);
+  if (minutes) parts.push(`${minutes} minute${minutes > 1 ? 's' : ''}`);
+  if (seconds) parts.push(`${seconds} seconde${seconds > 1 ? 's' : ''}`);
+
+  return parts.join(', ');
+}
+
 module.exports = {
   Embed,
   Wait,
@@ -90,5 +109,7 @@ module.exports = {
   FormatToDcDate,
   ParseTime,
   InsertData,
-  DeleteData
+  DeleteData,
+  fetchData,
+  formatDuration
 };

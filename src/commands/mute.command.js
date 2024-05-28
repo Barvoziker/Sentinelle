@@ -27,6 +27,24 @@ class MuteCommand extends Command {
                     description: "Temps du mute",
                     type: ApplicationCommandOptionType.String,
                     required: false,
+                    choices: [
+                        {
+                            name: "1 jour",
+                            value: "1d",
+                        },
+                        {
+                            name: "1 semaine",
+                            value: "1w",
+                        },
+                        {
+                            name: "1 mois",
+                            value: "1m",
+                        },
+                        {
+                            name: "1 an",
+                            value: "1y",
+                        },
+                    ],
                 }
             ],
             clientPermissions: ["EmbedLinks", "MuteMembers"],
