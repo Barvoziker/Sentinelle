@@ -29,21 +29,50 @@ class MuteCommand extends Command {
                     required: false,
                     choices: [
                         {
+                            name: "5 minutes",
+                            value: "5m",
+                        },
+                        {
+                            name: "15 minutes",
+                            value: "15m",
+                        },
+                        {
+                            name: "30 minutes",
+                            value: "30m",
+                        },
+                        {
+                            name: "1 heure",
+                            value: "1h",
+                        },
+                        {
+                            name: "3 heures",
+                            value: "3h",
+                        },
+                        {
+                            name: "6 heures",
+                            value: "6h",
+                        },
+                        {
+                            name: "12 heures",
+                            value: "12h",
+                        },
+                        {
                             name: "1 jour",
-                            value: "1d",
+                            value: "1j",
+                        },
+                        {
+                            name: "3 jours",
+                            value: "3j",
                         },
                         {
                             name: "1 semaine",
-                            value: "1w",
+                            value: "1s",
                         },
                         {
                             name: "1 mois",
                             value: "1m",
                         },
-                        {
-                            name: "1 an",
-                            value: "1y",
-                        },
+
                     ],
                 }
             ],
