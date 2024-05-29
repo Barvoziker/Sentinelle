@@ -1,5 +1,6 @@
 const { Event } = require("sheweny");
 const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
+const {startTwitchListener} = require("./twitch.event");
 
 class ReadyEvent extends Event {
   constructor(client) {
@@ -16,6 +17,8 @@ class ReadyEvent extends Event {
     this.client.user.setPresence({
       activities: [{ type: ActivityType.Streaming, url: "https://twitch.tv/barvoziker_1", name: "Barvoziker_1.tv" }],
     });
+
+    startTwitchListener(this.client);
   }
 }
 
