@@ -1,6 +1,7 @@
-const { Defer, Embed} = require("../utils/shortcuts");
+const { Defer, Embed, InsertData} = require("../utils/shortcuts");
 const { Command } = require("sheweny");
 const {ApplicationCommandOptionType} = require("discord.js");
+const {UnbanData} = require("../db");
 
 class UnbanCommand extends Command {
     constructor(client) {
@@ -58,6 +59,12 @@ await Defer(interaction);
         }
 
         await interaction.guild.bans.remove(member, { reason });
+        await InsertData({
+            id: member.id,
+            reason,
+            date: new Date(),
+            moderatorId: interaction.user.id,
+        }, UnbanData);
 
         return await interaction.editReply({
             embeds: [

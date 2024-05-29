@@ -1,6 +1,7 @@
-const { Defer, Embed } = require("../utils/shortcuts");
+const { Defer, Embed, InsertData} = require("../utils/shortcuts");
 const { Command } = require("sheweny");
 const {ApplicationCommandOptionType} = require("discord.js");
+const {KickData} = require("../db");
 
 class KickCommand extends Command {
     constructor(client) {
@@ -81,6 +82,12 @@ class KickCommand extends Command {
             } catch (error) {
                 console.log(error);
             }
+            await InsertData({
+                id: member.id,
+                reason: reason,
+                date: new Date(),
+                moderatorId: interaction.user.id,
+            }, KickData);
             await member.kick(reason);
             return await interaction.editReply({
                 embeds: [

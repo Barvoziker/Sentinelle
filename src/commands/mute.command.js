@@ -88,6 +88,7 @@ class MuteCommand extends Command {
         const reason = interaction.options.getString("raison") || "Aucune raison spécifiée";
         const time = ParseTime(interaction.options.getString("temps")) || 0;
 
+
         if (!member) {
             return await interaction.editReply({
                 embeds: [
@@ -139,7 +140,7 @@ class MuteCommand extends Command {
                     console.log(error);
                 }
                 await member.timeout(time, reason);
-                await InsertData({id : member.id, reason, duration : time, date : new Date()}, MuteData);
+                await InsertData({id : member.id, reason, duration : time, date : new Date(), moderatorId: interaction.user.id}, MuteData);
                 return await interaction.editReply({
                     embeds: [
                         Embed()
