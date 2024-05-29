@@ -49,7 +49,7 @@ async function checkLiveStatus(client) {
                 .setDescription("▸ " + stream.title)
                 .setColor("#9146FF")
                 .setThumbnail("https://cdn.discordapp.com/attachments/714815450864943144/1245423836531523656/Logo.png?ex=6658b2d5&is=66576155&hm=b0732a221067078faac6a340020b6d32e8f900e6f8fba89b24055421f873c23f&")
-                .setFooter("Barvoziker_1.tv")
+                .setFooter({ text: "Barvoziker_1.tv" })
                 .setTimestamp()
 
             await channel.send({ embeds: [embed] });
