@@ -65,6 +65,6 @@ async function checkLiveStatus(client) {
 
 module.exports = {
     startTwitchListener: (client) => {
-        setInterval(() => checkLiveStatus(client), 100);
+        setInterval(() => checkLiveStatus(client), 30000);
     },
 };
