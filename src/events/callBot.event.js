@@ -4,7 +4,7 @@ class CallBotEvent extends Event {
   constructor(client) {
     super(client, "messageCreate", {
       description: "Appel du bot",
-      once: true,
+      once: false,
       emitter: client,
     });
   }
