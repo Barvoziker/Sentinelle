@@ -1,10 +1,6 @@
 const { Defer, Embed, fetchData, formatDuration } = require("../utils/shortcuts");
 const { Command } = require("sheweny");
 const { ApplicationCommandOptionType, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
-const KickData = require("../db/kickSchema");
-const BanData = require("../db/banSchema");
-const MuteData = require("../db/muteSchema");
-const UnbanData = require("../db/unbanSchema");
 
 class GiveawayCommand extends Command {
     constructor(client) {
